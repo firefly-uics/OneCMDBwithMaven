@@ -20,11 +20,24 @@
  * 02110-1301 USA.
  * 
  * Lokomo Systems AB can be contacted via e-mail: info@lokomo.com or via
- * paper mail: Lokomo Systems AB, Svärdvägen 27, SE-182 33
+ * paper mail: Lokomo Systems AB, Svï¿½rdvï¿½gen 27, SE-182 33
  * Danderyd, Sweden.
  *
  */
 package org.onecmdb.core.utils.xpath.generator;
+
+import org.apache.commons.jxpath.Pointer;
+import org.apache.commons.jxpath.ri.model.NodePointer;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.onecmdb.core.ICi;
+import org.onecmdb.core.internal.model.ItemId;
+import org.onecmdb.core.utils.bean.CiBean;
+import org.onecmdb.core.utils.bean.ValueBean;
+import org.onecmdb.core.utils.xml.OneCmdbBeanProvider;
+import org.onecmdb.core.utils.xpath.IOneCMDBContentGenerator;
+import org.onecmdb.core.utils.xpath.commands.QueryCommand;
+import org.onecmdb.core.utils.xpath.model.*;
 
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -33,26 +46,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-
-import net.sf.cglib.beans.BeanMap;
-
-import org.apache.commons.jxpath.Pointer;
-import org.apache.commons.jxpath.ri.model.NodePointer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.onecmdb.core.ICi;
-import org.onecmdb.core.IValue;
-import org.onecmdb.core.internal.model.ItemId;
-import org.onecmdb.core.utils.bean.CiBean;
-import org.onecmdb.core.utils.bean.ValueBean;
-import org.onecmdb.core.utils.xml.OneCmdbBeanProvider;
-import org.onecmdb.core.utils.xpath.IOneCMDBContentGenerator;
-import org.onecmdb.core.utils.xpath.commands.QueryCommand;
-import org.onecmdb.core.utils.xpath.model.AttributeValueContext;
-import org.onecmdb.core.utils.xpath.model.InstanceCollectionContext;
-import org.onecmdb.core.utils.xpath.model.InstanceContext;
-import org.onecmdb.core.utils.xpath.model.TemplateCollectionContext;
-import org.onecmdb.core.utils.xpath.model.TemplateContext;
 
 /**
  * Generate XMLformat for query. 

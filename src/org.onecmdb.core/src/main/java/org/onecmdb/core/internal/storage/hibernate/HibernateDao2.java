@@ -20,63 +20,25 @@
  * 02110-1301 USA.
  * 
  * Lokomo Systems AB can be contacted via e-mail: info@lokomo.com or via
- * paper mail: Lokomo Systems AB, Svärdvägen 27, SE-182 33
+ * paper mail: Lokomo Systems AB, Svï¿½rdvï¿½gen 27, SE-182 33
  * Danderyd, Sweden.
  *
  */
 package org.onecmdb.core.internal.storage.hibernate;
 
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
 import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Disjunction;
-import org.hibernate.criterion.Expression;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Property;
-import org.hibernate.criterion.Restrictions;
-import org.onecmdb.core.IAttribute;
-import org.onecmdb.core.ICi;
-import org.onecmdb.core.ICmdbTransaction;
-import org.onecmdb.core.IObjectScope;
-import org.onecmdb.core.IPath;
-import org.onecmdb.core.IRFC;
-import org.onecmdb.core.ISession;
+import org.onecmdb.core.*;
 import org.onecmdb.core.internal.ccb.AttributeModifiable;
 import org.onecmdb.core.internal.ccb.CiModifiable;
-import org.onecmdb.core.internal.ccb.CmdbTransaction;
-import org.onecmdb.core.internal.ccb.RfcQueryCriteria;
-import org.onecmdb.core.internal.ccb.rfc.RFC;
-import org.onecmdb.core.internal.model.BasicAttribute;
-import org.onecmdb.core.internal.model.ConfigurationItem;
 import org.onecmdb.core.internal.model.ItemId;
-import org.onecmdb.core.internal.model.Path;
-import org.onecmdb.core.internal.model.QueryCriteria;
-import org.onecmdb.core.internal.model.QueryResult;
-import org.onecmdb.core.internal.storage.IDaoReader;
-import org.onecmdb.core.internal.storage.IDaoWriter;
-import org.onecmdb.core.internal.storage.expression.OneCMDBExpression;
-import org.onecmdb.core.tests.profiler.Profiler;
+import org.onecmdb.core.profiler.Profiler;
 import org.springframework.dao.ConcurrencyFailureException;
+
+import java.util.*;
 
 public class HibernateDao2  {//implements IDaoReader2, IDaoWriter2 {
 
@@ -146,7 +108,7 @@ public class HibernateDao2  {//implements IDaoReader2, IDaoWriter2 {
 			//inter.setDaoReader(this);
 			inter.setSession(s);
 			
-			Session session = sf.openSession(inter);
+			Session session = sf.openSession();
 			
 			//sessionLocked = true;
 			return (session);

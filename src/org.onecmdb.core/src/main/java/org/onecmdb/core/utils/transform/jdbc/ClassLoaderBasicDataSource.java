@@ -27,11 +27,9 @@
 package org.onecmdb.core.utils.transform.jdbc;
 
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -925,6 +923,10 @@ public class ClassLoaderBasicDataSource implements DataSource {
      */
     public int getLoginTimeout() throws SQLException {
         return createDataSource().getLoginTimeout();
+    }
+
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return null;
     }
 
 

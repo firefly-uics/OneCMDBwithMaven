@@ -20,7 +20,7 @@
  * 02110-1301 USA.
  * 
  * Lokomo Systems AB can be contacted via e-mail: info@lokomo.com or via
- * paper mail: Lokomo Systems AB, Svärdvägen 27, SE-182 33
+ * paper mail: Lokomo Systems AB, Svï¿½rdvï¿½gen 27, SE-182 33
  * Danderyd, Sweden.
  *
  */
@@ -29,7 +29,7 @@ package org.onecmdb.core.internal.storage.hibernate;
 import java.io.Serializable;
 
 import org.hibernate.HibernateException;
-import org.hibernate.engine.SessionImplementor;
+import org.hibernate.engine.spi.SessionImplementor;
 import org.hibernate.id.IdentifierGenerator;
 import org.onecmdb.core.ICi;
 import org.onecmdb.core.internal.ccb.CmdbTransaction;

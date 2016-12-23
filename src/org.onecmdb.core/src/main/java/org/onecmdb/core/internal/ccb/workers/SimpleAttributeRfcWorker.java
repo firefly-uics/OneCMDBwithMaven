@@ -20,7 +20,7 @@
  * 02110-1301 USA.
  * 
  * Lokomo Systems AB can be contacted via e-mail: info@lokomo.com or via
- * paper mail: Lokomo Systems AB, Svärdvägen 27, SE-182 33
+ * paper mail: Lokomo Systems AB, Svï¿½rdvï¿½gen 27, SE-182 33
  * Danderyd, Sweden.
  *
  */
@@ -68,7 +68,7 @@ import org.onecmdb.core.internal.model.ObjectConverter;
 import org.onecmdb.core.internal.model.primitivetypes.SimpleTypeFactory;
 import org.onecmdb.core.internal.reference.ConnectionItem;
 import org.onecmdb.core.internal.storage.IDaoReader;
-import org.onecmdb.core.tests.profiler.Profiler;
+import org.onecmdb.core.profiler.Profiler;
 import org.onecmdb.core.utils.xml.BeanScope;
 
 public class SimpleAttributeRfcWorker implements IRfcWorker {
@@ -323,7 +323,7 @@ public class SimpleAttributeRfcWorker implements IRfcWorker {
 							+ "' not defined in templates of" 
 							+ " " +
 							(ci.isBlueprint() ? "template" : "instance")
-							+ "´'"
+							+ "ï¿½'"
 							+ ci.getAlias() + "'");
 			return (result);
 		}

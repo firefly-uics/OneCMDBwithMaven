@@ -20,7 +20,7 @@
  * 02110-1301 USA.
  * 
  * Lokomo Systems AB can be contacted via e-mail: info@lokomo.com or via
- * paper mail: Lokomo Systems AB, Svärdvägen 27, SE-182 33
+ * paper mail: Lokomo Systems AB, Svï¿½rdvï¿½gen 27, SE-182 33
  * Danderyd, Sweden.
  *
  */
@@ -35,7 +35,7 @@ import org.apache.commons.logging.LogFactory;
 import org.onecmdb.core.IOneCmdbContext;
 import org.onecmdb.core.IService;
 import org.onecmdb.core.ISession;
-import org.onecmdb.core.tests.profiler.Profiler;
+import org.onecmdb.core.profiler.Profiler;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

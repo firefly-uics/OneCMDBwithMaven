@@ -27,7 +27,7 @@ import org.onecmdb.core.IAttribute;
 import org.onecmdb.core.ICi;
 import org.onecmdb.core.ISession;
 import org.onecmdb.core.IValue;
-import org.onecmdb.core.tests.profiler.Profiler;
+import org.onecmdb.core.profiler.Profiler;
 
 public class CSVExporter {
 

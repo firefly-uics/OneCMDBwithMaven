@@ -31,9 +31,56 @@ Notes:
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<spring.version>4.0.5.RELEASE</spring.version>
+		<hibernate.version>4.3.5.Final</hibernate.version>
 	</properties>
 
+	<dependencyManagement>
 	<dependencies>
+	<!-- Common libs -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-framework-bom</artifactId>
+		<version>${spring.version}</version>
+		<type>pom</type>
+		<scope>import</scope>
+	</dependency>
+	</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -41,17 +88,23 @@ Notes:
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId>
-			<version>3.2.7.ga</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>commons-logging</artifactId>
-					<groupId>commons-logging</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+			<version>2.1_3</version>
+        </dependency>
+
+		<!--<dependency>-->
+			<!--<groupId>org.hibernate</groupId>-->
+			<!--<artifactId>hibernate</artifactId>-->
+			<!--<version>3.2.7.ga</version>-->
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<artifactId>commons-logging</artifactId>-->
+					<!--<groupId>commons-logging</groupId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.acegisecurity</groupId>
 			<artifactId>acegi-security</artifactId>
@@ -131,8 +184,8 @@ Notes:
 		</dependency>
 		<dependency>
 			<groupId>com.oracle.toplink</groupId>
-			<artifactId>toplink-api</artifactId>
-			<version>1.0.0</version>
+			<artifactId>toplink</artifactId>
+			<version>10.1.3.5</version>
 		</dependency>
 
 	</dependencies>
