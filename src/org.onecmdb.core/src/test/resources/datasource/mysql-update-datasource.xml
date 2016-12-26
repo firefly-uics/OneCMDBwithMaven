@@ -14,10 +14,9 @@
  
 <beans default-dependency-check="none">
 
-	<!--  class="org.apache.commons.dbcp.BasicDataSource" -->
 
 	<bean id="dataSource"
-		class="org.onecmdb.core.internal.storage.DataSourceWrapper"
+		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"

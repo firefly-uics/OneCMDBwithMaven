@@ -829,7 +829,7 @@ public class HibernateDao implements IDaoReader, IDaoWriter {
 				hibCriteria.setProjection(Projections.rowCount());
 				List list = hibCriteria.list();
 				if (list != null && !list.isEmpty()) {
-					Integer itemCount = ((Integer)list.get(0)).intValue();
+					Integer itemCount = ((Long)list.get(0)).intValue();
 					result.setTotalHits(itemCount);
 				}
 			} else {

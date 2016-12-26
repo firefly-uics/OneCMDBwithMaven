@@ -28,26 +28,26 @@ public class OneCMDBTestConfig {
 	 * Example Datasources:
 	 * Using localhost and default port for specific db.
 	 */
-	public static String HSQL_INPROC_UPDATE_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/hsql-inproc-update-datasource.xml";
-	public static String HSQL_INPROC_CREATE_DROP_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/hsql-inproc-create-drop-datasource.xml";
+	public static String HSQL_INPROC_UPDATE_DATASOURCE = "datasource/hsql-inproc-update-datasource.xml";
+	public static String HSQL_INPROC_CREATE_DROP_DATASOURCE = "datasource/hsql-inproc-create-drop-datasource.xml";
 
-	public static String HSQL_SERVER_UPDATE_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/hsql-server-update-datasource.xml";
-	public static String HSQL_SERVER_CREATE_DROP_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/hsql-server-create-drop-datasource.xml";
+	public static String HSQL_SERVER_UPDATE_DATASOURCE = "datasource/hsql-server-update-datasource.xml";
+	public static String HSQL_SERVER_CREATE_DROP_DATASOURCE = "datasource/hsql-server-create-drop-datasource.xml";
 	
-	public static String MYSQL_CREATE_DROP_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/mysql-create-datasource.xml";
-	public static String MYSQL_UPDATE_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/mysql-update-datasource.xml";
+	public static String MYSQL_CREATE_DROP_DATASOURCE = "datasource/mysql-create-datasource.xml";
+	public static String MYSQL_UPDATE_DATASOURCE = "datasource/mysql-update-datasource.xml";
 	
-	public static String DB2_CREATE_DROP_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/db2-create-drop-datasource.xml";
-	public static String DB2_UPDATE_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/db2-update-datasource.xml";
+	public static String DB2_CREATE_DROP_DATASOURCE = "datasource/db2-create-drop-datasource.xml";
+	public static String DB2_UPDATE_DATASOURCE = "datasource/db2-update-datasource.xml";
 
-	public static final String ORACLE_10_SERVER_CREATE_DROP_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/oracle10-create-datasource.xml";
-	public static final String SQLSERVER2005_CREATE_DROP_DATASOURCE = "org/onecmdb/core/tests/resources/datasource/sqlserver-create-datasource.xml";
+	public static final String ORACLE_10_SERVER_CREATE_DROP_DATASOURCE = "datasource/oracle10-create-datasource.xml";
+	public static final String SQLSERVER2005_CREATE_DROP_DATASOURCE = "datasource/sqlserver-create-datasource.xml";
 	
-	public static String EMPTY_PROVIDER = "org/onecmdb/core/tests/resources/providers/empty-provider.xml";
+	public static String EMPTY_PROVIDER = "providers/empty-provider.xml";
 
 	// Default data Source
-	private String dataSourceResource = HSQL_SERVER_CREATE_DROP_DATASOURCE;
-	private String performanceTitle = HSQL_SERVER_CREATE_DROP_DATASOURCE;
+	private String dataSourceResource = MYSQL_CREATE_DROP_DATASOURCE;
+	private String performanceTitle = MYSQL_UPDATE_DATASOURCE;
 	private PrintStream reportPrintStream = System.out;
 	private String modelProvider = EMPTY_PROVIDER;
 	

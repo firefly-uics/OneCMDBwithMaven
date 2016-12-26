@@ -65,8 +65,8 @@ public class SpringFactoryBean {
 		
 		if (context == null) {
 			String[] resources = {
-					onecmdbProvider,
 					dataSource,
+					onecmdbProvider,
 					dataProvider,
 			};
 			appContext = new ClassPathXmlApplicationContext(resources);

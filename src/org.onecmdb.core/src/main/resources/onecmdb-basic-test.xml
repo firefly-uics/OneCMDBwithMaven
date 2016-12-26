@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE 
+	beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd"">
+
+<beans default-dependency-check="none">
+
+
+	<bean id="dataSource"
+		  class="org.apache.commons.dbcp.BasicDataSource"
+		  destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+				  value="jdbc:mysql://localhost:3306/onecmdb" />
+		<property name="username" value="test" />
+		<property name="password" value="123456" />
+		<property name="initialSize">
+			<value>5</value>
+		</property>
+	</bean>
+
+	<bean id="hibernateProperties" class="org.onecmdb.core.internal.storage.HibernateProperty">
+		<property name="properties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+				<prop key="show_sql">true</prop>
+				<prop key="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="onecmdb" class="org.onecmdb.core.internal.OneCmdb" init-method="init" 
+		destroy-method="close">
+		<property name="profiler" value="false"/>
+		<!-- <property name="sessionTimeout" value="60000"/> -->
+		<!-- <property name="scanIntervall" value="60000"/> -->
+		<property name="services">
+			<!--  The order here is vital -->
+			<!-- 
+				 1) ccb 
+				 2) model
+				 3) refernce
+				 4) policy
+				 ... The rest.
+			 -->
+			<list>
+
+			</list>
+		</property>
+	</bean>
+
+	<bean id="daoReaderInterceptor" class="org.onecmdb.core.internal.storage.hibernate.DaoReaderInterceptor" />
+
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="mappingResources">
+			<list>
+				<value>org/onecmdb/core/internal/storage/hibernate/mapping/Ci.hbm.xml</value>
+				<value>org/onecmdb/core/internal/storage/hibernate/mapping/RFC.hbm.xml</value>
+			</list>
+		</property>
+		<property name="entityInterceptor" ref="daoReaderInterceptor" />
+
+		<!--  User configurable paremeters are imported -->
+		<!--  Is retrived from import datasource -->	 
+		<property name="hibernateProperties" ref="hibernateProperties"/>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+
+	
+</beans>

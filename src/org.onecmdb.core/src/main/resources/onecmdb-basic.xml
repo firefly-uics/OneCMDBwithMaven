@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE 
-	beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+<!DOCTYPE
+	beans PUBLIC "-//SPRING//DTD BEAN//EN"
 	"http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans default-dependency-check="none">
-	
-	
-	
 	<bean id="onecmdb" class="org.onecmdb.core.internal.OneCmdb" init-method="init" 
 		destroy-method="close">
 		<property name="profiler" value="false"/>
@@ -14,8 +11,8 @@
 		<!-- <property name="scanIntervall" value="60000"/> -->
 		<property name="services">
 			<!--  The order here is vital -->
-			<!-- 
-				 1) ccb 
+			<!--
+				 1) ccb
 				 2) model
 				 3) refernce
 				 4) policy
@@ -24,7 +21,7 @@
 			<list>
 				<ref bean="ccbService" />
 				<ref bean="modelService" />
-				<ref bean="referenceService" />				
+				<ref bean="referenceService" />
 				<ref bean="authenticationService"/>
 				<ref bean="authorizationService"/>
 				<ref bean="policyService" />
@@ -255,7 +252,7 @@
 		</property>
 		<property name="session">
 			<ref bean="initSession"/>
-		</property>	
+		</property>
 		
 		<property name="startupTransaction">
 			<ref bean="bootTx" />
@@ -287,7 +284,7 @@
 
 	<bean id="daoReaderInterceptor" class="org.onecmdb.core.internal.storage.hibernate.DaoReaderInterceptor" />
 
-	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="mappingResources">
 			<list>
 				<value>org/onecmdb/core/internal/storage/hibernate/mapping/Ci.hbm.xml</value>
@@ -297,7 +294,7 @@
 		<property name="entityInterceptor" ref="daoReaderInterceptor" />
 
 		<!--  User configurable paremeters are imported -->
-		<!--  Is retrived from import datasource -->	 
+		<!--  Is retrived from import datasource -->
 		<property name="hibernateProperties" ref="hibernateProperties"/>
 		<property name="dataSource" ref="dataSource" />
 	</bean>
@@ -363,7 +360,6 @@
 		<constructor-arg value="admin" />
 		<constructor-arg value="123" />
 		<constructor-arg ref="onecmdb" />
-		
 	</bean>
 
 
@@ -502,9 +498,9 @@
 		<property name="userTemplateAlias">
 			<value>CMDBAccount</value>
 		</property>
-		<property name="session">
-			<ref bean="initSession"/>
-		</property>
+		<!--<property name="session">-->
+			<!--<ref bean="initSession"/>-->
+		<!--</property>-->
 	</bean>
 	
 
