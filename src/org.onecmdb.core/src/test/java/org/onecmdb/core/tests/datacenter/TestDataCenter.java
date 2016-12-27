@@ -20,7 +20,7 @@
  * 02110-1301 USA.
  * 
  * Lokomo Systems AB can be contacted via e-mail: info@lokomo.com or via
- * paper mail: Lokomo Systems AB, Svärdvägen 27, SE-182 33
+ * paper mail: Lokomo Systems AB, Svï¿½rdvï¿½gen 27, SE-182 33
  * Danderyd, Sweden.
  *
  */
@@ -42,6 +42,8 @@ import org.onecmdb.core.ISession;
 import org.onecmdb.core.IValue;
 import org.onecmdb.core.tests.OnecmdbTestUtils;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -54,12 +56,8 @@ public class TestDataCenter extends TestCase {
 	private ICi ciRelationRoot;
 
 	public void setUp() {
-		// Resource res = new
-		// ClassPathResource("org/onecmdb/core/example/application.xml");
-		Resource res = new ClassPathResource("onecmdb.xml");
-		XmlBeanFactory beanFactory = new XmlBeanFactory(res);
-		GenericApplicationContext svrctx = new GenericApplicationContext(
-				beanFactory);
+
+		ApplicationContext svrctx = new ClassPathXmlApplicationContext("conf/onecmdb.xml");
 
 		final IOneCmdbContext cmdb = (IOneCmdbContext) svrctx
 				.getBean("onecmdb");

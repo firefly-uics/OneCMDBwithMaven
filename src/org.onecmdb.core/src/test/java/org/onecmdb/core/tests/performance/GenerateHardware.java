@@ -35,12 +35,12 @@ public class GenerateHardware {
 	List<CI> items = new ArrayList<CI>();
 	
 	public static void main(String argv[]) {
-		int servers = Integer.parseInt(argv[0]);
-		int networks = Integer.parseInt(argv[1]);
+		int servers = 3;//Integer.parseInt(argv[0]);
+		int networks = 4;//Integer.parseInt(argv[1]);
 		String file = null;
-		if (argv.length > 2) {
-			file = argv[2];
-		}
+//		if (argv.length > 2) {
+//			file = argv[2];
+//		}
 		new GenerateHardware().generate(file, servers, networks);
 	}
 	
